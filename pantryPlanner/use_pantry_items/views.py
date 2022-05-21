@@ -1,3 +1,6 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 
-# Create your views here.
+def find_recipies(request):
+    return render(request, "use_pantry_items.html", {"name": "Stepv"})
+
