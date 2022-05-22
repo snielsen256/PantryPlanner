@@ -15,5 +15,7 @@ Page 2 (find_forgotten_recipe) accepts a list of ingredients like page 1, but al
 # Useful Websites
 
 * [Django documentation](https://docs.djangoproject.com/en/3.0/contents/)
-* [Django tutorials point](https://www.tutorialspoint.com/django/index.htm)
 * [Django video tutorial](https://www.youtube.com/watch?v=rHux0gMZ3Eg)
+* [Django tutorials point](https://www.tutorialspoint.com/django/index.htm)
+* [Django tutorial - RealPython](https://realpython.com/get-started-with-django-1/)
+* [Stack Overflow - Django user input](https://stackoverflow.com/questions/25028895/very-simple-user-input-in-django)

@@ -9,9 +9,14 @@
 <body>
     <header>
         <h1>Pantry Planner - Use Pantry Items</h1>
-        <a href="../use_pantry_items"><b>Use Pantry Items</b></a>
+        <a href="../use_pantry_items"><b>Use Pantry Items</b></a><br>
         <a href="../find_forgotten_recipe"><b>Find Forgotten Recipe</b></a>
     </header>
-    <p>{{name}}</p>
+    <h3>Enter an ingredient name</h3>
+    <form method="post" action="/search">
+        {% csrf_token %}
+        <input type="text" name="textfield">
+        <button type="submit">Search</button>
+    </form>
 </body>
 </html>
