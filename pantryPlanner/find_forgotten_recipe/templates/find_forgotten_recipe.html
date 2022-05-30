@@ -9,9 +9,26 @@
 <body>
     <header>
         <h1>Pantry Planner - Find Forgotten Recipe</h1>
-        <a href="../use_pantry_items"><b>Use Pantry Items</b></a>
+        <a href="../use_pantry_items"><b>Use Pantry Items</b></a><br>
         <a href="../find_forgotten_recipe"><b>Find Forgotten Recipe</b></a>
     </header>
-    <p>{{name}}</p>
+    <h3>Enter an ingredient name</h3>
+    <form method="post" action="find_forgotten_recipe/search">
+        {% csrf_token %}
+        <input type="text" name="textfield">
+        <button type="submit">Search</button>
+    </form>
+    <div>
+        {% for recipe in recipes %}
+        <a href={{recipe.1}} target="_blank">
+            <h3>
+                {{recipe.0}}
+            </h3>
+        </a>
+
+        {% endfor %}
+
+        
+    </div>
 </body>
 </html>

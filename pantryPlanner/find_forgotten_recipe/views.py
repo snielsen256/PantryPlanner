@@ -2,7 +2,22 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def find_recipes(request):
-    return render(request, "find_forgotten_recipe.html", {"name": "Stevp"})
+    return render(request, "find_forgotten_recipe.html")
+
+def search(request):
+    #searches recipeData for a recipe name containing the search parameter
+    search_param = request.POST.get("textfield", None)
+    found_recipes = []
+    
+    for chosen_recipe in recipeData:
+        if search_param.lower() in chosen_recipe["Name"].lower():
+            found_recipes.append([chosen_recipe["Name"], chosen_recipe["Site"]])
+    
+    if len(found_recipes) == 0:
+        return HttpResponse("None Found")
+    else:
+        return render(request, "find_forgotten_recipe.html", {"recipes": found_recipes})
+
 
 # A basic database for testing.
 recipeData = [

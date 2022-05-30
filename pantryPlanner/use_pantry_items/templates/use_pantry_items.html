@@ -20,13 +20,11 @@
     </form>
     <div>
         {% for recipe in recipes %}
-        
-        <h1>
-            {{recipe.0}}
-        </h1>
-        <p>
-            <a href={{recipe.1}}>Link</a>
-        </p>
+        <a href={{recipe.1}} target="_blank">
+            <h3>
+                {{recipe.0}}
+            </h3>
+        </a>
 
         {% endfor %}
 

@@ -10,7 +10,7 @@ Page 2 (find_forgotten_recipe) accepts a list of ingredients like page 1, but al
 
 * Visaul Studio Code
 * Python 3.9.13
-* Django
+* Django 4.0.4
 
 # Useful Websites
 
