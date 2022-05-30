@@ -9,16 +9,16 @@ def search(request):
     search_param = request.POST.get("textfield", None)
     found_recipes = []
     
-    for recipe_num in recipeData:
-        for ingredient_num in recipeData[recipe_num]["ingredients"]:
+    for chosen_recipe in recipeData:
+        for ingredient_num in range(len(chosen_recipe["ingredients"])):
 
-            if search_param.lower() in recipeData[recipe_num]["ingredients"][ingredient_num]:
-                found_recipes.append(recipeData[recipe_num]["Site"])
+            if search_param.lower() in chosen_recipe["ingredients"][ingredient_num]:
+                found_recipes.append([chosen_recipe["Name"], chosen_recipe["Site"]])
     
     if len(found_recipes) == 0:
         return HttpResponse("None Found")
     else:
-        return HttpResponse(found_recipes)
+        return render(request, "use_pantry_items.html", {"recipes": found_recipes})
 
 
 # A basic database for testing.
